@@ -1,0 +1,8 @@
+---
+School:
+- name: KVS
+  principal: Someone
+  Students:
+  - rno: 7
+    name: Amrit
+    marks: 99

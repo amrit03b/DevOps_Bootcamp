@@ -1,0 +1,16 @@
+{
+    "School": [
+        {
+            "name": "KVS",
+            "principal": "Someone",
+            "Students": [
+                {
+                    "rno": 7,
+                    "name": "Amrit Bhattacharya",
+                    "marks": 99
+
+                }
+            ]
+        }
+    ]
+}

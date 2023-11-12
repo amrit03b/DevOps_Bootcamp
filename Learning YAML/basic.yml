@@ -61,4 +61,91 @@ date: !!timestamp 2002-12-14
 india time: 2001-12-15T02:59:43.10 +5:30
 no time zone: 2001-12-15T02:59:43.10
 
-...
+---
+
+student: !!seq
+ - marks
+ - name
+ - roll_no
+
+#like this also
+cities: [new delhi, mumbai]
+
+# some of the keys of the seq will be empty
+# sparse seq
+sparse seq:
+ - hey
+ - how
+ - 
+
+#nested sequence
+
+- 
+ - mango
+ - apple
+ - banana
+-
+ - marks
+ - roll_no
+ - date
+
+#key:value pairs are called maps
+!!map
+# nested mappings: map within a map
+name: Amrit Bhattacharya
+role:
+  age: 20
+  job: student
+
+#same as
+
+name: Amrit Bhattacharya
+role: { age: 20, job: student}
+
+# pairs: key may have duplicate values
+# !!pairs
+
+pair example: !!pairs
+ - job: student
+ - job: teacher
+#same as
+pair example: !!pairs [job: student, job: teacher]
+#this will be an array of hashtables
+
+# !!set will allow you to have unique values
+names: !!set
+ ? Amrit
+ ? Ankit
+ ? Dipak
+
+# dictionary !!omap
+people: !!omap
+ - Person1:
+    name: Amrit Bhattacharya
+    age: 20
+    percentage: 94.8%
+ - Person2:
+    name: Ankit Kumar
+    age: 20
+    percentage: 88%
+
+#reusing some properties using anchors
+likings: &likes
+ fav fruit: strawberry
+ fav color: black
+
+person1:
+ name: Amrit Bhattacharya
+ <<: *likes
+
+# this will loom like
+
+person1:
+ name: Amrit Bhattacharya
+ fav fruit: strawberry
+ fav color: black
+
+person2:
+ name: Ankit Kumar
+ fav fruit: mango
+ fav color: black
